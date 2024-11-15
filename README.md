@@ -5,8 +5,8 @@ KotiX OS is a custom AI-powered with LLM support distributive for development.
 
 https://github.com/ollama/ollama
 
-To run and chat with Llama 3.1:
-`ollama run llama3.1`
+To run and chat with Llama 3.2:
+`ollama run llama3.2`
 
 Based on Debian 12
 [Main page](https://nolfgk.github.io/KotiX-OS/)
