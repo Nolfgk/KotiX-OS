@@ -1,19 +1,52 @@
 body {
-  background-color: #7cc9d1;
+  margin-left: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: 100% 100%;
+    background-color: #7cc9d1;
 }
-
-h1 {
+.parallax {
+          /* The image used */
+          background-image: url("kotix.png");
+          /* Set a specific height */
+          min-height: 700px;
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: 100% 100%;
+          background-repeat: no-repeat;
+          background-color: #7cc9d1;
+ }
+.h1 {
   color: black;
   margin-left: 20px;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
   }
-body {
-  margin-left: 20px;
-  background-image: url('kotix.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
-  background-position: 100% 100%;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-  }
+.container {
+  position: relative;
+  margin: 0 auto; /* Center it */
+}
 
+.container .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+}
+.header {
+  position: sticky;
+  top: 0;
+  padding: 10px 16px;
+  background: #000;
+  color: #7cc9d1;
+}
+.footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    color: #7cc9d1;
+    text-align: center;
+}

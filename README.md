@@ -1,7 +1,7 @@
-# KotiX
+# KotiX OS
 
 ![alt text](kotix.png)
-Kotix is a custom AI-powered with LLM support distributive for development.
+KotiX OS is a custom AI-powered with LLM support distributive for development.
 
 https://github.com/ollama/ollama
 
@@ -9,13 +9,17 @@ To run and chat with Llama 3.1:
 `ollama run llama3.1`
 
 Based on Debian 12
-[Main page](https://nolfgk.github.io/KotiX/)
+[Main page](https://nolfgk.github.io/KotiX-OS/)
 
 Telegram chat:
 ![alt text](kotix_tg.jpg)
 
 Release notes:
 
+- 01-09-2024 - 24.11 version released
+    - base image updated to debian 12.8 - bookworm
+    - returned Intellij Idea
+    - added Google Chrome
 - 01-09-2024 - 24.09 version released
     - base image updated to debian 12.7 - bookworm
     - added ollama for llm support
