@@ -16,10 +16,11 @@ Telegram chat:
 
 Release notes:
 
-- 01-09-2024 - 24.11 version released
+- 15-11-2024 - 24.11 version released
     - base image updated to debian 12.8 - bookworm
     - returned Intellij Idea
     - added Google Chrome
+    - added some wiki pages
 - 01-09-2024 - 24.09 version released
     - base image updated to debian 12.7 - bookworm
     - added ollama for llm support
