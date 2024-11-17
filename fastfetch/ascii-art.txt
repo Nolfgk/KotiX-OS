@@ -1,0 +1,21 @@
+$6                                        /\                 /\
+$4 ,'cO00x,                            $6,:xxxl              'lxxl'
+$4,;kXK00XN''                        $6''oXxloKW0oc;;:;,:oooOXkd,dO'
+$4c0K000Nxc'                          $6,o0'cddl;odkkdc,cxxOx;,' ck'
+$4lW0oooNl'                         $6,';xK;;;'.'cdKNKd':oo0Xx,. lO'
+$4lWKOooNl'                       $6''okKWK:....;ld000XOldOXOc'..';'
+$4lWX0ooXo;'      $6;llkkkxkkkkxxxkkkKWXWWWW:::;:ddd' oNXOKk.c:;o0k'
+$4 ONX0xoOOxx;  $6;kkdc',;clo:,'',co0XOONWKOOOKklc$10$6c,c.cKOl.l:,$10$6lxkd'
+$4 ';xNXXKkkOOK$6NNNx;''';ooc,''',:oxXXxkNWko''',$10 0$6X:0NOolxdO$10 0$6:ckK'
+$4   ';x0KXXXXX$6NWxoc''';ooo;''',:oONXxkNWOdkOOkk$10$6Oooo..',.,lk$10$6lldOK'
+$4     '';ooXXX$6WWooc''';ooo;''',:okNXxkNWXxOdoddo...  .lO.  ..;kOKK'
+        ''''NKooc''';ooo;''',:dONXkOKN0Oooo,'..    ..;.   ',:do. 
+         '',N0doc''';ooo;''',:dOXWX0OdkO0oxx:kkdcc;...,k0Oxdd:
+          ',N0Ooc''';ooo;''',:dkXWk:d0OlOKO,xckK00000OW0kOc'
+           ,N0Ooc''';ooo;''',:dOXWkkOx'd0l,;;;::::::l0Kc'',
+           ,N0Ooc''';ooo:;;;;cdOXWW0OlcdkKd.......'col''
+           ,XKOoc';:cdko''...;oOXWW0Odc:dkOK.     oNO''
+           ,XXd,,':oxOWWN0cccco0NWWK0k:''llXNNNNXXKx,'
+           ,XXO xxkO0oOWWWWWW0    cKKx:''llXWNX0Okko',
+$4           ,X0K KN0o''cdKWWWWXd:,  ,kKo::llkXWKkxdxd;''
+            NKD:::'x:   xKNdooxx:   .KKO;.::;lWX:--;cx::
