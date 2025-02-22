@@ -5,10 +5,10 @@ KotiX OS is a custom AI-powered with LLM support distributive for development.
 
 https://github.com/ollama/ollama
 
-To run and chat with Llama 3.2:
-`ollama run llama3.2`
+To run and chat with DeepSeek:
+`ollama run deepseek-r1:14b`
 
-Based on Debian 12
+Based on Debian Trixie
 [Main page](https://nolfgk.github.io/KotiX-OS/)
 
 Telegram chat:
@@ -16,6 +16,11 @@ Telegram chat:
 
 Release notes:
 
+- 22-02-2025 - 25.02.17 version released
+  - base image updated to debian test
+  - returned Intellij Idea
+  - added Chromium
+  - fastfetch
 - 15-11-2024 - 24.11 version released
     - base image updated to debian 12.8 - bookworm
     - returned Intellij Idea
