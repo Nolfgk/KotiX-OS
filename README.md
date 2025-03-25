@@ -6,6 +6,7 @@ KotiX OS is a custom AI-powered with LLM support distributive for development.
 https://github.com/ollama/ollama
 
 To run and chat with DeepSeek:
+`ollama serve` - if ollama is not running
 `ollama run deepseek-r1:14b`
 
 Based on Debian Trixie
@@ -15,7 +16,12 @@ Telegram chat:
 ![alt text](kotix_tg.jpg)
 
 Release notes:
-
+- 25-03-2025 - 25.04 version released
+  - base image updated to latest debian test (24.03.2025)
+  - software updated
+  - removed intellij idea
+  - removed libreoffice
+  - removed firefox
 - 22-02-2025 - 25.02.17 version released
   - base image updated to debian test
   - returned Intellij Idea
