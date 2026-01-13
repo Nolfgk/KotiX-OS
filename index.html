@@ -5,6 +5,53 @@
     <title>KotiX OS</title>
     <link rel="stylesheet" href="style.css">
 
+    <script>
+        async function fetchRSS() {
+            const rssUrl = 'https://distrowatch.com/news/dw.xml';
+            const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
+
+            try {
+                const response = await fetch(proxyUrl);
+                const data = await response.json();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data.contents, 'text/xml');
+
+                const items = xmlDoc.querySelectorAll('item');
+                const rssContainer = document.getElementById('rss-feed');
+
+                if (items.length === 0) {
+                    rssContainer.innerHTML = '<div class="error">No RSS items found</div>';
+                    return;
+                }
+
+                let html = '';
+                items.forEach((item, index) => {
+                    if (index >= 5) return; // Limit to 5 latest items
+
+                    const title = item.querySelector('title')?.textContent || 'No title';
+                    const link = item.querySelector('link')?.textContent || '#';
+                    const description = item.querySelector('description')?.textContent || '';
+                    const pubDate = item.querySelector('pubDate')?.textContent || '';
+
+                    html += `
+                        <div class="rss-item">
+                            <h3><a href="${link}" target="_blank">${title}</a></h3>
+                            <p class="rss-date">${new Date(pubDate).toLocaleDateString()}</p>
+                            <p class="rss-description">${description.substring(0, 200)}...</p>
+                        </div>
+                    `;
+                });
+
+                rssContainer.innerHTML = html;
+            } catch (error) {
+                console.error('Error fetching RSS:', error);
+                document.getElementById('rss-feed').innerHTML = '<div class="error">Failed to load RSS feed</div>';
+            }
+        }
+
+        // Load RSS feed when page loads
+        window.addEventListener('load', fetchRSS);
+    </script>
 </head>
 
 <body style="style.css">
@@ -21,7 +68,8 @@
     <h2>To run and chat with Deepseek:</h2>
     <h2>"ollama run deepseek-r1:14b"</h2>
     <div></div>
-    <a href="https://drive.google.com/file/d/10E4rMhOe2bwBpY_kUGRDXPYZqRE4NQKv/view?usp=sharing">Download KotiX-OS 25.04 iso image from Google Drive.</a>
+    <a href="https://drive.google.com/file/d/10E4rMhOe2bwBpY_kUGRDXPYZqRE4NQKv/view?usp=sharing">Download KotiX-OS 25.04
+        iso image from Google Drive.</a>
     <div></div>
     <a href="kotix-live-gnome-2025.04.md5">Download checksum md5</a>
     <p></p>
@@ -41,6 +89,13 @@
     <div> - LibreOffice</div>
     <div> - Firefox</div>
     <a href="https://t.me/kotix_linux">Go to Telegram channel</a>
+
+    <div class="rss-section">
+        <h2>Latest DistroWatch News</h2>
+        <div id="rss-feed">
+            <div class="loading">Loading RSS feed...</div>
+        </div>
+    </div>
 </parallax>
 </body>
 <div class="footer">
