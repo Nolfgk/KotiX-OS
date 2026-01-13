@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KotiX-OS Unit Tests</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+            background-color: #1a1a1a;
+            color: #00ff00;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+        }
+        
+        .test-results {
+            background: #000;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #00ff00;
+            margin-bottom: 20px;
+        }
+        
+        .test-pass {
+            color: #00ff00;
+        }
+        
+        .test-fail {
+            color: #ff4444;
+        }
+        
+        .test-summary {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .error-details {
+            color: #ff8888;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+        
+        .run-button {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .run-button:hover {
+            background: #00cc00;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>KotiX-OS Unit Tests</h1>
+            <p>RSS Feed Functionality Tests</p>
+        </div>
+        
+        <button class="run-button" onclick="runTests()">Run Tests</button>
+        
+        <div id="test-output" class="test-results">
+            <div class="loading">Click "Run Tests" to start testing...</div>
+        </div>
+        
+        <div id="test-summary" class="test-summary" style="display: none;"></div>
+    </div>
+
+    <!-- Include test framework and tests -->
+    <script src="test-framework.js"></script>
+    <script src="rss-feed-tests.js"></script>
+    
+    <script>
+        async function runTests() {
+            const output = document.getElementById('test-output');
+            const summary = document.getElementById('test-summary');
+            
+            output.innerHTML = '<div class="loading">Running tests...</div>';
+            summary.style.display = 'none';
+            
+            try {
+                // Override console.log to capture output
+                const originalLog = console.log;
+                let testOutput = '';
+                
+                console.log = function(...args) {
+                    testOutput += args.join(' ') + '\n';
+                    originalLog.apply(console, args);
+                };
+                
+                // Run the tests
+                const success = await runRSSFeedTests();
+                
+                // Restore console.log
+                console.log = originalLog;
+                
+                // Display results
+                output.innerHTML = `<pre>${testOutput}</pre>`;
+                
+                // Show summary
+                summary.style.display = 'block';
+                if (success) {
+                    summary.innerHTML = '✅ All Tests Passed!';
+                    summary.className = 'test-summary test-pass';
+                } else {
+                    summary.innerHTML = '❌ Some Tests Failed!';
+                    summary.className = 'test-summary test-fail';
+                }
+                
+            } catch (error) {
+                output.innerHTML = `
+                    <div class="test-fail">
+                        <h3>Test Runner Error</h3>
+                        <div class="error-details">${error.message}</div>
+                    </div>
+                `;
+                summary.style.display = 'block';
+                summary.innerHTML = '❌ Test Runner Failed!';
+                summary.className = 'test-summary test-fail';
+            }
+        }
+        
+        // Auto-run tests when page loads (optional)
+        // window.addEventListener('load', runTests);
+    </script>
+</body>
+</html>
