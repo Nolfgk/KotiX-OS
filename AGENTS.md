@@ -8,7 +8,7 @@ KotiX-OS is a custom Debian-based Linux distribution with integrated AI/LLM supp
 ### Static Website
 - **Preview**: Open `index.html` directly in a browser
 - **No build process required**: This is a static HTML/CSS website
-- **No testing framework**: Manual testing by opening the website
+- **Unit Testing**: Open `tests/test-runner.html` in browser to run unit tests
 
 ### Distribution Development
 - **ISO Management**: Use Git LFS for ISO files (*.iso filter=lfs)
@@ -114,12 +114,23 @@ KotiX-OS/
 ├── README.md              # Project documentation
 ├── fastfetch/             # System customization
 ├── images/                # Project assets
-└── opencode.json          # AI provider config
+├── opencode.json          # AI provider config
+└── tests/                 # Unit tests
+    ├── test-framework.js  # Simple test framework
+    ├── rss-feed-tests.js  # RSS feed unit tests
+    └── test-runner.html   # Test runner interface
 ```
+
+## Testing Guidelines
+- **Unit Tests**: Located in `tests/` directory
+- **Test Runner**: Open `tests/test-runner.html` in browser to run all tests
+- **Test Framework**: Simple custom JavaScript framework (no external dependencies)
+- **RSS Feed Tests**: Comprehensive coverage of RSS parsing, error handling, and HTML generation
+- **Manual Testing**: Verify RSS feed loads correctly on main website
 
 ## Notes for AI Agents
 - This is primarily a Linux distribution project, not a traditional software development project
 - Focus on documentation, asset management, and configuration
-- No compilation, build, or unit testing requirements
-- Website is static HTML/CSS - no JavaScript framework
+- Website is static HTML/CSS with minimal JavaScript for RSS feed functionality
 - All changes should maintain the project's simplicity and focus on the Linux distribution
+- When adding JavaScript features, include corresponding unit tests in the `tests/` directory
