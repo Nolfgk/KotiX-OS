@@ -16,6 +16,10 @@ Telegram chat:
 ![alt text](kotix_tg.jpg)
 
 Release notes:
+- 01-03-2026 - 26.03 version released
+  - base image updated to latest debian test
+  - software updated
+  - included gnome-extensions
 - 25-03-2025 - 25.04 version released
   - base image updated to latest debian test (24.03.2025)
   - software updated

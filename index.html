@@ -17,10 +17,10 @@
                 const xmlDoc = parser.parseFromString(data.contents, 'text/xml');
 
                 const items = xmlDoc.querySelectorAll('item');
-                const rssContainer = document.getElementById('rss-feed');
+                const RSSContainer = document.getElementById('rss-feed');
 
                 if (items.length === 0) {
-                    rssContainer.innerHTML = '<div class="error">No RSS items found</div>';
+                    RSSContainer.innerHTML = '<div class="error">No RSS items found</div>';
                     return;
                 }
 
@@ -42,7 +42,7 @@
                     `;
                 });
 
-                rssContainer.innerHTML = html;
+                RSSContainer.innerHTML = html;
             } catch (error) {
                 console.error('Error fetching RSS:', error);
                 document.getElementById('rss-feed').innerHTML = '<div class="error">Failed to load RSS feed</div>';
@@ -64,28 +64,26 @@
         </div>
     </div>
     <h2>AI-powered with LLM support</h2>
-    <h2>based on debian 13 (trixie)</h2>
+    <h2>based on debian 14</h2>
     <h2>To run and chat with Deepseek:</h2>
     <h2>"ollama run deepseek-r1:14b"</h2>
     <div></div>
-    <a href="https://drive.google.com/file/d/10E4rMhOe2bwBpY_kUGRDXPYZqRE4NQKv/view?usp=sharing">Download KotiX-OS 25.04
+    <a href="https://drive.google.com/file/d/1ST9B9IamMcDQo75oQzVu_vpX1AN1-RnQ/view?usp=sharing">Download KotiX-OS 26.03
         iso image from Google Drive.</a>
     <div></div>
-    <a href="kotix-live-gnome-2025.04.md5">Download checksum md5</a>
+    <a href="kotix-amd64-gnome-2026.03.md5">Download checksum md5</a>
     <p></p>
-    <a href="https://github.com/Nolfgk/KotiX-OS.git">GitHub link</a>
+    <a href="https://codeberg.org/kotix/KotiX-OS">Codeberg git repository link</a>
 
     <p>Installed software: (addition to default Debian software)</p>
-    <div> - ollama</div>
     <div> - git</div>
     <div> - Chromium</div>
     <div> - flatpack</div>
-    <div> - qbittorrent</div>
     <div> - fastfetch</div>
+    <div> - telegram-desktop</div>
     <div> - vlc</div>
     <p>Removed software:</p>
     <div> - games</div>
-    <div> - Thunderbird</div>
     <div> - LibreOffice</div>
     <div> - Firefox</div>
     <a href="https://t.me/kotix_linux">Go to Telegram channel</a>
